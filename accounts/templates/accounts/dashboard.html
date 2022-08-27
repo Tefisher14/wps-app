@@ -1,0 +1,55 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+<div class="container">
+    <p>Welcome back, <big>Bennett Design!</big></p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Updates</h5>
+            <div class=" card card-body"></div>
+        </div>
+    </div>
+
+    <hr>
+    <br>
+    <div class="row">
+        <div>
+            <canvas id="pieChart" style="max-width: 500px;"></canvas>
+        </div>
+        <div class="col-md-4 offset-md-1">
+            <h5>Total Projects</h5>
+            <div class=" card card-body">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h5>Average Completion Rate</h5>
+            <div class="card card-body">
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Latest Projects</h5>
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                        <th>Design Team</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+
+</div>
+
+
+{% endblock %}

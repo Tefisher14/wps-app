@@ -1,0 +1,43 @@
+{% extends '_auth_base.html' %}
+{% load static %}
+
+
+{% block auth_form %}
+
+<form class="auth-login-form mt-2" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    <div class="form-group">
+        <label class="form-label" for="login-email">Email</label>
+
+        {{ form.username }}
+    </div>
+    <div class="form-group">
+        <div class="d-flex justify-content-between">
+            <label for="login-password">Password</label><a
+                href="{% static 'page-auth-forgot-password-v2.html' %}"><small>Forgot
+                    Password?</small></a>
+
+        </div>
+        <div class="input-group input-group-merge form-password-toggle">
+
+            {{ form.password }}
+            <div class="input-group-append"><span class="input-group-text cursor-pointer" id="password-revealler"><i
+                        data-feather="eye"></i></span></div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="remember-me" type="checkbox" tabindex="3" />
+            <label class="custom-control-label" for="remember-me"> Remember Me</label>
+        </div>
+    </div>
+    <button class="btn btn-primary btn-block" tabindex="4" type="submit">Sign in</button>
+    <input type="hidden" name="next" value="{{ next }}">
+</form>
+
+{% endblock %}
